@@ -25,3 +25,10 @@ describe('#Card generation Tests', () => {
     assert.equal(card.length, 25)
   })
 })
+
+describe('#Random string generation Tests', () => {
+    it('Should return an string with length equal to 125', () => {
+        let str = require('../server/services/generateRandomString')(125);
+        assert.strictEqual(str.length, 125)
+    })
+})
