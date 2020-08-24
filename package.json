@@ -1,0 +1,32 @@
+{
+  "name": "custom-bingo-game",
+  "version": "1.0.0",
+  "description": "simple bingo card generator from a custom list of text",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Emmayuel80/custom-bingo-game.git"
+  },
+  "author": "Emmayuel80",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Emmayuel80/custom-bingo-game/issues"
+  },
+  "homepage": "https://github.com/Emmayuel80/custom-bingo-game#readme",
+  "devDependencies": {
+    "eslint": "^7.7.0",
+    "eslint-config-standard": "^14.1.1",
+    "eslint-plugin-import": "^2.22.0",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-promise": "^4.2.1",
+    "eslint-plugin-react": "^7.20.6",
+    "eslint-plugin-standard": "^4.0.1",
+    "mocha": "^8.1.1"
+  },
+  "dependencies": {
+    "seedrandom": "^3.0.5"
+  }
+}
