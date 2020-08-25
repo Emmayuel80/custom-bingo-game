@@ -14,6 +14,10 @@ app.use(logger('dev'));
 app.use('/api', routes)
 
 //SERVER
+app.get("*", (req, res) => {
+    res.sendFile(path.join(__dirname, "client", "build", "index.html"));
+});
+
 app.listen(PORT,function(){
     console.log('listening on port: ' + PORT)
 })
