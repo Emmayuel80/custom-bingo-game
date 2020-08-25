@@ -64,7 +64,7 @@
     padding: 30px 10px;
     grid-column: span 5;
     text-align: center;
-    font: 72px/0.9 "Amatic SC", cursive;
+    font: 72px/0.9 "Roboto", cursive;
   }
   .title span {
     display: none;
