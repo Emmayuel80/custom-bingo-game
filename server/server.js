@@ -5,6 +5,7 @@ const PORT = process.env.PORT || 8000
 const routes = require('./routes/routes')
 const logger = require('morgan')
 const cors = require('cors')
+const path = require('path')
 //CONFIG
 app.use(cors());
 app.use(bodyParser.urlencoded({ extended: false }));
