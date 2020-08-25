@@ -1,1 +1,0 @@
-console.log(require('./server/services/generateCard')('w8ZtkN0bp33ECYnm3YVXhjCmcHGiBe1FsoZByhaGPddcyPPN8EHMypyorwKtMAFfPlBItn27f6o1OLuWoVPaIy0J2oE4TYVUK1eoh0mzlsL95Si3UKPJhGySx24o8'))
