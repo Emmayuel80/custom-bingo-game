@@ -1,14 +1,17 @@
 const express = require('express')
 const bodyParser = require('body-parser')
 const app = express()
-const PORT = env.PORT || 3000
-const routes = require('./routes/router')
+const PORT = process.env.PORT || 8000
+const routes = require('./routes/routes')
+const logger = require('morgan')
+const cors = require('cors')
 //CONFIG
-app.use(bodyParser.urlencoded({extended: true}))
-app.use(bodyParser.json)
-
+app.use(cors());
+app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.json());
+app.use(logger('dev'));
 //ROUTES
-app.use('/', routes)
+app.use('/api', routes)
 
 //SERVER
 app.listen(PORT,function(){
