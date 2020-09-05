@@ -144,7 +144,7 @@ footer a .icons {
   transition: 0.1s ease;
   height: 0;
   pointer-events: none;
-  font: 280px/0.5 "Caveat Brush", cursive;
+  font: 280px/0.5 "Caveat Brush";
   text-align: center;
   transform: rotate(-45deg);
 }
@@ -165,7 +165,7 @@ footer a .icons {
   left: 0;
   top: -19px;
   color: #fdb90b;
-  font: 30px "Caveat Brush", cursive;
+  font: 30px "Caveat Brush";
 }
 
 .bingo-card__checkbox {
@@ -201,7 +201,7 @@ footer a .icons {
     transition: 0.1s ease;
     height: 0;
     pointer-events: none;
-    font: 25vw "Caveat Brush", cursive;
+    font: 25vw "Caveat Brush";
     text-align: center;
     transform: rotate(0);
   }
