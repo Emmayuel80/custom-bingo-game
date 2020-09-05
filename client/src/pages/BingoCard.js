@@ -18,7 +18,7 @@ class BingoCard extends Component {
     }
     render() {
         const bingoCard = this.state.card.map((i, index) => 
-        (<BingoSpace key={index} text={i} />))
+        (index === 13 ? (<BingoSpace key={index} text={'Free Space'} />) : (<BingoSpace key={index} text={i} />)))
         return (
             <div className="main-content">
                 <div className="title">
