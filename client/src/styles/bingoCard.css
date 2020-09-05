@@ -1,172 +1,208 @@
-@font-face{
+@font-face {
   font-family: Roboto;
   src: url(./fonts/Roboto-Regular.ttf)
 }
-@font-face{
+
+@font-face {
   font-family: Lato;
   src: url(./fonts/Lato-Regular.ttf)
 }
+
 * {
-    box-sizing: border-box;
-  }
-  
-  body {
-    background: #f8f8f8;
-    font-family: "Roboto", sans-serif;
-  }
-  
-  aside.context {
-    text-align: center;
-    color: #333;
-    line-height: 1.7;
-  }
-  aside.context a {
-    text-decoration: none;
-    color: #333;
-    padding: 3px 0;
-    border-bottom: 1px dashed;
-  }
-  aside.context a:hover {
-    border-bottom: 1px solid;
-  }
-  aside.context .explanation {
-    max-width: 700px;
-    margin: 4em auto 0;
-  }
-  
-  footer {
-    text-align: center;
-    margin: 3em auto;
-    width: 100%;
-  }
-  footer a {
-    text-decoration: none;
-    display: inline-block;
-    width: 45px;
-    height: 45px;
-    border-radius: 50%;
-    background: transparent;
-    border: 1px dashed #333;
-    color: #333;
-    margin: 5px;
-  }
-  footer a:hover {
-    background: rgba(255, 255, 255, 0.1);
-  }
-  footer a .icons {
-    margin-top: 12px;
-    display: inline-block;
-    font-size: 20px;
-  }
-  
-  .main-content {
-    max-width: 600px;
-    width: 100%;
-    margin: 4em auto 0;
-    overflow: hidden;
-  }
-  
-  .title {
-    background: #fdb90b;
-    color: #fff;
-    padding: 30px 10px;
-    grid-column: span 5;
-    text-align: center;
-    font: 72px/0.9 "Lato";
-  }
-  .title span {
-    display: none;
-  }
-  .title span:nth-child(1) {
-    display: block;
-  }
-  
-  .bingo-card {
-    background: #f7d75c;
-    padding: 10px;
-    display: grid;
-    grid-gap: 3px;
-    grid-template-rows: repeat(5, 110px);
-    grid-template-columns: repeat(5, 19.5%);
-    text-transform: uppercase;
-  }
-  .bingo-card__item {
-    background: #f9f59e;
-    display: flex;
-    align-items: center;
-    text-align: center;
-    justify-content: center;
-    position: relative;
-    cursor: pointer;
-    font-size: 12px;
-    line-height: 1.35;
-    user-select: none;
-  }
+  box-sizing: border-box;
+}
+
+body {
+  --text-color: #222;
+  --bkg-color: #fff;
+  --anchor-color: #0033cc;
+  --title-color:  #fdb90b;
+  --bingo-card-color: #f7d75c;
+  --bingo-tile-color: #f9f59e;
+}
+
+body.dark-theme {
+  --text-color: #eee;
+  --bkg-color: #121212;
+  --anchor-color: #809fff;
+  --title-color:  #272727;
+  --bingo-card-color: #444444;
+  --bingo-tile-color: #5c5c5c;
+}
+
+body {
+  color: var(--text-color);
+  background: var(--bkg-color);
+  font-family: "Roboto";
+}
+
+aside.context {
+  text-align: center;
+  color: #333;
+  line-height: 1.7;
+}
+
+aside.context a {
+  text-decoration: none;
+  color: #333;
+  padding: 3px 0;
+  border-bottom: 1px dashed;
+}
+
+aside.context a:hover {
+  border-bottom: 1px solid;
+}
+
+aside.context .explanation {
+  max-width: 700px;
+  margin: 4em auto 0;
+}
+
+footer {
+  text-align: center;
+  margin: 3em auto;
+  width: 100%;
+}
+
+footer a {
+  text-decoration: none;
+  display: inline-block;
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  background: transparent;
+  border: 1px dashed #333;
+  color: #333;
+  margin: 5px;
+}
+
+footer a:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+footer a .icons {
+  margin-top: 12px;
+  display: inline-block;
+  font-size: 20px;
+}
+
+.main-content {
+  max-width: 600px;
+  width: 100%;
+  margin: 4em auto 0;
+  overflow: hidden;
+}
+
+.title {
+  background: var(--title-color);
+  color: #fff;
+  padding: 30px 10px;
+  grid-column: span 5;
+  text-align: center;
+  font: 72px/0.9 "Lato";
+}
+
+.title span {
+  display: none;
+}
+
+.title span:nth-child(1) {
+  display: block;
+}
+
+.bingo-card {
+  background: var(--bingo-card-color);
+  padding: 10px;
+  display: grid;
+  grid-gap: 3px;
+  grid-template-rows: repeat(5, 110px);
+  grid-template-columns: repeat(5, 19.5%);
+  text-transform: uppercase;
+}
+
+.bingo-card__item {
+  background: var(--bingo-tile-color);
+  display: flex;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+  position: relative;
+  cursor: pointer;
+  font-size: 12px;
+  line-height: 1.35;
+  user-select: none;
+}
+
+.bingo-card__item:after {
+  content: "-";
+  position: absolute;
+  top: -28%;
+  left: -30%;
+  color: #fbda7d;
+  width: 100%;
+  opacity: 0;
+  transition: 0.1s ease;
+  height: 0;
+  pointer-events: none;
+  font: 280px/0.5 "Caveat Brush", cursive;
+  text-align: center;
+  transform: rotate(-45deg);
+}
+
+.bingo-card__item.active:after {
+  height: 100%;
+  opacity: 0.7;
+}
+
+.bingo-card__item {
+  padding: 15px;
+}
+
+.bingo-card__item.active .bingo-card__checkbox:before {
+  content: "\2714";
+  position: absolute;
+  color: black;
+  left: 0;
+  top: -19px;
+  color: #fdb90b;
+  font: 30px "Caveat Brush", cursive;
+}
+
+.bingo-card__checkbox {
+  display: none;
+}
+
+.clear-button {
+  margin: 2em 0 0;
+  font: 700 16px 'Nunito', sans-serif;
+  text-transform: uppercase;
+  cursor: pointer;
+  display: inline-block;
+  border: 2px dotted;
+  color: #fdb90b;
+  padding: 8px 10px;
+}
+
+.clear-button:hover {
+  color: #f2ae00;
+}
+
+@media only screen and (max-width: 600px) {
+
+  /* For mobile phones: */
   .bingo-card__item:after {
-    content: "-";
+    content: "x";
     position: absolute;
-    top: -28%;
-    left: -30%;
+    top: -2vh;
+    left: -5%;
     color: #fbda7d;
     width: 100%;
     opacity: 0;
     transition: 0.1s ease;
     height: 0;
     pointer-events: none;
-    font: 280px/0.5 "Caveat Brush", cursive;
+    font: 25vw "Caveat Brush", cursive;
     text-align: center;
-    transform: rotate(-45deg);
+    transform: rotate(0);
   }
-  .bingo-card__item.active:after {
-    height: 100%;
-    opacity: 0.7;
-  }
-  
-  .bingo-card__item {
-    padding: 15px;
-  }
-  .bingo-card__item.active .bingo-card__checkbox:before {
-    content: "\2714";
-    position: absolute;
-    color: black;
-    left: 0;
-    top: -19px;
-    color: #fdb90b;
-    font: 30px "Caveat Brush", cursive;
-  }
-  .bingo-card__checkbox {
-    display: none;
-  }
-  
-  .clear-button {
-    margin: 2em 0 0;
-    font: 700 16px 'Nunito', sans-serif;
-    text-transform: uppercase;
-    cursor: pointer;
-    display: inline-block;
-    border: 2px dotted;
-    color: #fdb90b;
-    padding: 8px 10px;
-  }
-  .clear-button:hover {
-    color: #f2ae00;
-  }
-  
-  @media only screen and (max-width: 600px) {
-    /* For mobile phones: */
-    .bingo-card__item:after {
-      content: "x";
-      position: absolute;
-      top: -2vh;
-      left: -5%;
-      color: #fbda7d;
-      width: 100%;
-      opacity: 0;
-      transition: 0.1s ease;
-      height: 0;
-      pointer-events: none;
-      font: 25vw "Caveat Brush", cursive;
-      text-align: center;
-      transform: rotate(0);
-    }
-  }
+}
