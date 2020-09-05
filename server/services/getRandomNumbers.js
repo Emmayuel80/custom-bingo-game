@@ -4,9 +4,16 @@ const customList = require('../config/customList')
 module.exports = function (arr) {
     let randomNumbers = [];
     for (let i = 0; i < arr.length; i++) {
-        const element = arr[i];
+        let element = arr[i];
         seedrandom(element, {global: true});
-        randomNumbers.push(Math.floor(Math.random() * ((customList.length-1) - 0 + 1)) + 0);
+        let rnumber = (Math.floor(Math.random() * ((customList.length-1) - 0 + 1)) + 0)
+        while(randomNumbers.includes(rnumber)){
+            element += 'a';
+            seedrandom(element, {global: true});
+            rnumber = (Math.floor(Math.random() * ((customList.length-1) - 0 + 1)) + 0)
+        }
+
+        randomNumbers.push(rnumber);
     }
     return randomNumbers;
 }
