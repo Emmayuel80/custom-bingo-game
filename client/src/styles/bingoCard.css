@@ -1,10 +1,18 @@
+@font-face{
+  font-family: Roboto;
+  src: url(./fonts/Roboto-Regular.ttf)
+}
+@font-face{
+  font-family: Lato;
+  src: url(./fonts/Lato-Regular.ttf)
+}
 * {
     box-sizing: border-box;
   }
   
   body {
     background: #f8f8f8;
-    font-family: "Nunito", sans-serif;
+    font-family: "Roboto", sans-serif;
   }
   
   aside.context {
@@ -64,7 +72,7 @@
     padding: 30px 10px;
     grid-column: span 5;
     text-align: center;
-    font: 72px/0.9 "Roboto", cursive;
+    font: 72px/0.9 "Lato";
   }
   .title span {
     display: none;
@@ -79,7 +87,7 @@
     display: grid;
     grid-gap: 3px;
     grid-template-rows: repeat(5, 110px);
-    grid-template-columns: repeat(5, 1fr);
+    grid-template-columns: repeat(5, 19.5%);
     text-transform: uppercase;
   }
   .bingo-card__item {
@@ -144,3 +152,21 @@
     color: #f2ae00;
   }
   
+  @media only screen and (max-width: 600px) {
+    /* For mobile phones: */
+    .bingo-card__item:after {
+      content: "x";
+      position: absolute;
+      top: -2vh;
+      left: -5%;
+      color: #fbda7d;
+      width: 100%;
+      opacity: 0;
+      transition: 0.1s ease;
+      height: 0;
+      pointer-events: none;
+      font: 25vw "Caveat Brush", cursive;
+      text-align: center;
+      transform: rotate(0);
+    }
+  }
