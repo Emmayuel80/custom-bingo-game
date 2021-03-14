@@ -1,6 +1,6 @@
 {
   "name": "custom-bingo-game",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "simple bingo card generator from a custom list of text",
   "main": "index.js",
   "scripts": {
