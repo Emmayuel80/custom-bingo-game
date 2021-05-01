@@ -38,7 +38,7 @@ module.exports = [
     'Nos stompean',
     'Stompeamos',
     'Dranca va corki',
-    'Dranca va malza'
+    'Dranca va malza',
     'Banean malza',
     'Banean Kindred',
     'Larm va Diego',
