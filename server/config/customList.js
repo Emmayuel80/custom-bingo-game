@@ -47,5 +47,5 @@ module.exports = [
     'Ganamos por default',
     'Kata tuich combo',
     'Dranca trollea',
-    'Tuich supp',
+    'Tuich suppp',
 ]
